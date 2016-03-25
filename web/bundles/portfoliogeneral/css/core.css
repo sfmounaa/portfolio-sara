@@ -1,0 +1,557 @@
+/*==========================================================================
+    ADMIN
+==========================================================================*/
+.admin-homepage {
+    left: 10px;
+    position: absolute;
+    top: 0;
+}
+.admin-project {
+    margin-bottom: 60px;
+}
+    .admin-project li, .admin-project a {
+        display: inline;
+    }
+
+#add_content ~ div {
+    background: rgba(255, 255, 255, 0.65) none repeat scroll 0 0;
+    border: solid 2px #292D31;
+    box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.5);
+    clear: both;
+    padding: 15px 25px 70px;
+}
+
+.project_contents {
+    margin: 25px 0;
+}
+    .project_contents .btn_round {
+        float: right;
+        margin: 15px 0;
+    }
+    .project_contents .btn > .fa {
+        margin: 5px 0 0 10px;
+    }
+/*==========================================================================
+    BUTTONS
+==========================================================================*/
+.btn > .fa {
+    margin: 3px 0 0 7px;
+    vertical-align: middle;
+}
+    #dl-cv .fa {
+        padding-bottom: 2px;
+        padding-left: 3px;
+        transform: rotate(90deg);
+    }
+/* buttons inside stripe */
+.stripe {
+    position: relative;
+}
+    .stripe li{
+        position: absolute;
+        top: -40px;
+        opacity: 0;
+        -webkit-transition: all .5s ease-out;
+        transition: all .5s ease-out;
+        z-index: -1;
+    }
+        .stripe .btn i {
+            padding-left: 2px;
+            padding-top: 3px;
+        }
+            /* Shadows */
+            .stripe li:before{
+                content: ' ';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 38px;
+                height: 5px;
+                background: rgba(0,0,0,.15);
+                box-shadow: 0 0 2px rgba(0,0,0,.25);
+                border-radius: 90px/20px;
+                z-index: 0;
+                transition: all 0.3s ease-out;
+                margin: 0 1px;
+            }
+.btn-flap {
+    float: right;
+    left: 80px;
+    min-height: 50px;
+    min-width: 50px;
+    position: relative;
+    text-align: center;
+}
+    .btn-flap label {
+        display: block;
+        height: 100%;
+    }
+        .btn-flap .fa {
+            margin: 5px 0 0;
+        }
+
+
+/* Dynamisme des boutons */
+
+    /* par défaut les btn secondaires cachés */
+    .btn_round[href="#closed-network"]{
+        display: none;
+    }
+    /* qd btn clic -> btn disparait */
+    #open-network:target ~ .bro > .btn_round[href="#open-network"]{
+        display: none;
+    }
+    /* et donc btn secondaires apparaissent */
+    #open-network:target ~ .btn_round[href="#closed-network"]{
+        display: block;
+    }
+
+    /* mvt btn inside stripe */
+    #open-network:target ~ .stripe li:hover, #open-network:target ~ .stripe li:focus{
+        animation: bounce 0.4s ease-out infinite alternate;
+            -webkit-animation: bounce 0.4s ease-out infinite alternate;
+            -moz-animation: bounce 0.4s ease-out infinite alternate;
+            -ms-animation: bounce 0.4s ease-out infinite alternate;
+            -o-animation: bounce 0.4s ease-out infinite alternate;
+    }
+    @keyframes bounce {
+        from {top: -40px;}
+        to   {top: -45px;}
+    }
+        @-webkit-keyframes bounce {
+            from {top: -40px;}
+            to   {top: -45px;}
+        }
+        @-moz-keyframes bounce {
+            from {top: -40px;}
+            to   {top: -45px;}
+        }
+        @-ms-keyframes bounce {
+            from {top: -40px;}
+            to   {top: -45px;}
+        }
+        @-o-keyframes bounce {
+            from {top: -40px;}
+            to   {top: -45px;}
+        }
+
+    #open-network:target ~ .stripe li:hover:before, #open-network:target ~ .stripe li:focus:before{
+        background: rgba(0,0,0,.2);
+        box-shadow: 0 0 2px rgba(0,0,0,.25);
+
+        animation: bounceShadow 0.4s ease-out infinite alternate;
+        -webkit-animation: bounceShadow 0.4s ease-out infinite alternate;
+        -moz-animation: bounceShadow 0.4s ease-out infinite alternate;
+        -ms-animation: bounceShadow 0.4s ease-out infinite alternate;
+        -o-animation: bounceShadow 0.4s ease-out infinite alternate;
+    }
+    @keyframes bounceShadow {
+        from {bottom: -10px;
+              height: 5px;}
+        to   {bottom: -15px;
+              width: 20px;
+              margin: 0 10px;
+              height: 4px;}
+        }
+        @-webkit-keyframes bounceShadow {
+            from {bottom: -10px;
+                height: 5px;}
+            to   {bottom: -15px;
+                width: 20px;
+                margin: 0 10px;
+                height: 4px;}
+        }
+        @-moz-keyframes bounceShadow {
+            from {bottom: -10px;
+                height: 5px;}
+            to   {bottom: -15px;
+                width: 20px;
+                margin: 0 10px;
+                height: 4px;}
+        }
+        @-ms-keyframes bounceShadow {
+            from {bottom: -10px;
+                height: 5px;}
+            to   {bottom: -15px;
+                width: 20px;
+                margin: 0 10px;
+                height: 4px;}
+        }
+        @-o-keyframes bounceShadow {
+            from {bottom: -10px;
+                height: 5px;}
+            to   {bottom: -15px;
+                width: 20px;
+                margin: 0 10px;
+                height: 4px;}
+        }
+/* Apparition btn stripe */
+    #open-network:target ~ .stripe li{
+        opacity: 1;
+        z-index: 1000;
+    }
+        #open-network:target ~ .stripe li:nth-child(1){
+            transform: translateY(150%);
+        }
+        #open-network:target ~ .stripe li:nth-child(2){
+            transform: translateY(312.5%);
+        }
+        #open-network:target ~ .stripe li:nth-child(3){
+            transform: translateY(475%);
+        }
+        #open-network:target ~ .stripe li:nth-child(4){
+            transform: translateY(637.5%);
+        }
+
+                /* Mode horizontal + reduction inter espace des boutons selon hauteur ecran */
+                @media only screen and (max-device-height: 570px){
+                        #open-network:target ~ .stripe li:nth-child(1){
+                            transform: translateX(-137.5%);
+                        }
+                        #open-network:target ~ .stripe li:nth-child(2){
+                            transform: translateX(-278.5%);
+                        }
+                        #open-network:target ~ .stripe li:nth-child(3){
+                            transform: translateX(-422.5%);
+                        }
+                        #open-network:target ~ .stripe li:nth-child(4){
+                            transform: translateX(-565%);
+                        }
+                }
+
+/* haut et bas de page */
+.haut-page,.bas-page{
+   position: absolute;
+    bottom: 0;
+    z-index: 1000;
+
+}
+.haut-page{
+    bottom: 65px;
+}
+
+
+/*==========================================================================
+    INFOBULLES
+==========================================================================*/
+
+.infobulle, .infobulle2{
+    font-family: "Amatic SC",cursive;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-shadow: rgba(0, 0, 0, 0.35)  1px  1px 3px,
+    rgba(0, 0, 0, 0.35) -1px  1px 3px,
+    rgba(0, 0, 0, 0.35) -1px -1px 3px,
+    rgba(0, 0, 0, 0.35)  1px -1px 3px;
+
+    display: none;
+    position: absolute;
+    text-align: center;
+    z-index: 1000;
+    color: #FFFFFF;
+}
+
+/*********************/
+
+.content-header-logo .infobulle{
+    transform: rotate(-10deg);
+    width: 150px;
+    margin-left: 100px;
+}
+.content-header-logo .infobulle::before{
+    background: rgba(0, 0, 0, 0) url("../images/arrows_hautpg.png") no-repeat scroll 0 0;
+    content: "";
+    height: 100px;
+    position: absolute;
+    right: 160px;
+    top: -35px;
+    transform: rotate(-25deg);
+    width: 70px;
+}
+#dl-cv .infobulle{
+    right: 150px;
+    top: 25px;
+    transform: rotate(-15deg);
+    width: 130px;
+}
+#dl-cv .infobulle:before{
+    background: rgba(0, 0, 0, 0) url("../images/arrows_cv.png") no-repeat scroll 0 0;
+    content: "";
+    height: 32px;
+    left: 111px;
+    position: absolute;
+    top: 10px;
+    transform: rotate(19deg);
+    width: 121px;
+}
+#social-network .infobulle{
+    right: 60px;
+    top: 150px;
+    transform: rotate(14deg);
+    width: 140px;
+}
+#social-network .infobulle:before{
+    background: rgba(0, 0, 0, 0) url("../images/arrows_networks.png") no-repeat scroll 0 0;
+    content: "";
+    height: 150px;
+    position: absolute;
+    right: -55px;
+    top: -30px;
+    transform: rotate(-12deg);
+    width: 130px;
+}
+.haut-page .infobulle{
+    right: -15px;
+    top: -185px;
+    transform: rotate(-15deg);
+    width: 125px;
+}
+.haut-page .infobulle:before{
+    background: rgba(0, 0, 0, 0) url("../images/arrows_logo.png") no-repeat scroll 0 0;
+    content: "";
+    height: 118px;
+    position: absolute;
+    right: 35px;
+    top: 85px;
+    transform: rotate(-25deg);
+    width: 138px;
+}
+.bas-page .infobulle{
+    bottom: 60px;
+    right: 150px;
+    transform: rotate(20deg);
+    width: 125px;
+}
+.bas-page .infobulle:before{
+    background: rgba(0, 0, 0, 0) url("../images/arrows_baspg.png") no-repeat scroll 0 0;
+    content: "";
+    height: 75px;
+    left: 23px;
+    position: absolute;
+    top: 50px;
+    transform: rotate(-14deg);
+    width: 206px;
+}
+/*==========================================================================
+    HEADER
+==========================================================================*/
+/* Tablette size max */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+
+}
+/* Smartphone size max */
+@media only screen and (max-device-width: 640px) {
+        .content-header-nav li:first-child .btn_round_smartphone::before{
+            background: rgb(0, 109, 117) none repeat scroll 0 0;
+            border-color: #00828c #005a60 #005a60 #00828c;
+        }
+        .content-header-nav li:nth-child(2) .btn_round_smartphone::before{
+            background: #A18929 none repeat scroll 0 0;
+            border-color: #C9A850 #7a691c #7a691c #C9A850;
+        }
+        .content-header-nav li:last-child .btn_round_smartphone::before{
+            background: #a80c35 none repeat scroll 0 0;
+            border-color: #c11941 #771024 #771024 #c11941;
+        }
+
+        .content-header-nav li:first-child .btn_round_smartphone::after {
+            content: "";
+        }
+            .content-header-nav li:first-child .btn_round_smartphone:hover::after, .content-header-nav li:first-child .btn_round_smartphone:active::after {
+                color: rgb(0, 109, 117);
+            }
+        .content-header-nav li:nth-child(2) .btn_round_smartphone::after {
+            content: "";
+            left: 19px;
+        }
+            .content-header-nav li:nth-child(2) .btn_round_smartphone:hover::after, .content-header-nav li:nth-child(2) .btn_round_smartphone:active::after {
+                color: #A18929;
+            }
+        .content-header-nav li:last-child .btn_round_smartphone::after {
+            content: "";
+        }
+            .content-header-nav li:last-child .btn_round_smartphone:hover::after, .content-header-nav li:last-child .btn_round_smartphone:active::after {
+                color: #a80c35;
+            }
+}
+/*==========================================================================
+    MAIN
+==========================================================================*/
+/* Tablette */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+
+}
+/* Smartphone */
+@media only screen and (max-device-width: 640px) {
+    .content-main {
+        margin: 5px 0 50px;
+    }
+        .content .fil_ariane {
+            margin: 0 10px;
+            line-height: 1.5em;
+        }
+        .content-main .content-main-right {
+            margin-left: 10px;
+            margin-top: 115px;
+            padding: 0;
+            width: 100%;
+        }
+        .content-main .content-main-left {
+            background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
+            border-style: solid;
+            border-width: 2px 2px 2px 0;
+            box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.5);
+            padding: 7px 7px 0;
+            width: 80%;
+            z-index: 1000;
+        }
+                .content-main .content-main-left_content {
+                    padding: 0;
+                }
+}
+/* Desktop */
+#bienvenue{
+    display: none;
+}
+
+.content .fil_ariane {
+    text-align: left;
+}
+.content-main-left_content h2 {
+    display: inline-block;
+    vertical-align: top;
+}
+.content-main-left_content > div:last-child {
+    margin-bottom: 20px;
+}
+
+
+/*==========================================================================
+    FOOTER
+==========================================================================*/
+/* Tablette size max */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+    footer.content-footer {
+        color: #FFFFFF;
+    }
+        footer .footer-core_block {
+            padding: 0 3%;
+        }
+}
+/* Smartphone size max */
+@media only screen and (max-device-width: 640px) {
+        .content-footer-core {
+            margin: 0 0 0 5%;
+            width: 77%;
+        }
+            footer .footer-core_block {
+                padding: 0;
+                width: 100%;
+            }
+            footer #footer-contenu {
+                margin: 0;
+            }
+                footer .R3 {
+                    bottom: 50px;
+                    left: 50%;
+                    position: relative;
+                }
+                    .footer-core_block li:nth-child(2) .btn_round_smartphone::after {
+                        bottom: 60px;
+                        content: "";
+                        font-size: 4em;
+                        left: 30px;
+                    }
+                    .footer-core_block li:last-child .btn_round_smartphone::after {
+                        content: "";
+                    }
+    footer address .R3 {
+        position: relative;
+        top: 10px;
+    }
+}
+/* Desktop */
+.content-footer {
+    transition: all 0.4s ease-in .5s;
+}
+.content-footer:hover {
+    color: #FFFFFF;
+}
+    footer p {
+        display: inline;
+    }
+    .footer-core_block{
+        vertical-align: top;
+        display: inline-block;
+        width: 33%;
+        padding: 0 8%;
+    }
+        .content-footer-core > div {
+            margin-top: 40px;
+        }
+            footer .fa {
+                margin: 0 8px;
+            }
+            footer .fa-circle {
+                font-size: 0.5em;
+            }
+            #footer-about img{
+                float: left;
+                margin-right: 15px;
+            }
+            footer .R3 .btn {
+                height: 70px;
+                width: 70px;
+            }
+            footer .R3 .btn:hover, footer .R3 .btn:active {
+                background-color: #292d31;
+                border-color: #23272b #3e444c #3e444c #23272b;
+            }
+        footer .credits {
+            text-align: center;
+        }
+
+/*
+.btn-footer {
+    background-color: #ffffff;
+    border-color: #fff #b8b8b8 #b8b8b8 #fff;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 3px 0 4px 0;
+    cursor: pointer;
+    z-index: 1000;
+    margin: 25px;
+}
+address ul li:first-child{
+    display: none;
+    margin: 10px;
+}
+address ul li:nth-child(3), address ul li:nth-child(5) {
+    display: none;
+}
+
+    @media only screen and (max-device-width: 480px), (max-device-width: 640px) and (max-device-height: 360px) {
+        address ul li:first-child{
+            display: block;
+        }
+        address ul li:nth-child(2), address ul li:nth-child(4) {
+            display: none;
+        }
+        address ul li:nth-child(3), address ul li:nth-child(5) {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+.btn-footer i {
+    bottom: 7px;
+    color: #292d31;
+    display: block;
+    position: relative;
+}
+.btn-footer i.fa-envelope {
+    bottom: -4px;
+    font-size: 2.5em;
+}
+
+
+*/

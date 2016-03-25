@@ -1,0 +1,176 @@
+
+
+/*==========================================================================
+    CORE
+==========================================================================*/
+/* Desktop */
+.content-main {
+    display: block;
+}
+/*==========================================================================
+    GALLERY REALISATIONS
+==========================================================================*/
+/* Tablette */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+
+}
+/* Smartphone */
+@media only screen and (max-device-width: 640px) {
+    .content-main-right article {
+        display: block;
+    }
+        .content-main-right .grid-realisations figcaption {
+             transform: translateX(0);
+        }
+
+}
+/* Desktop */
+.grid-realisations{
+    float: left;
+    margin: 0 5px 10px;
+
+    /*display: inline-block;*/
+    border: 2px solid #292d31;
+    border-radius: 1px;
+    -moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}/*
+.grid-realisations svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.grid-realisations svg line {
+    stroke-width: 180;
+    stroke: #075F6C;
+    opacity: 0.5;
+    fill: none;
+    stroke-dasharray: 180;
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: transform 1s ease-out;
+}*/
+
+
+/*========== Vignettes realisations ==========*/
+.grid-realisations figure{
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+    width: 240px;
+}
+.grid-realisations figure img{
+    transform: scale(3);
+    width: 100%;
+    transition: transform 0.5s ease-out 0.1s;
+}
+.grid-realisations figcaption h2{
+    display: inline-block;
+}
+.grid-realisations h2, .grid-realisations time{
+    font-size: 1em;
+    color: #FFFFFF;
+}
+.tag li{
+    font-size: 0.8em;
+    color: #FFFFFF;
+    display: inline-block;
+}
+/*========== Effet de filtre sur vignettes ==========*/
+.grid-realisations figcaption, .grid-realisations span{
+    background-color: rgba(0, 109, 117, 0.8);
+    position: absolute;
+    transition: transform .4s ease-out .15s;
+}
+.grid-realisations span{
+    opacity: .5;
+}
+.grid-realisations figcaption{
+    padding: 10px;
+    text-align: left;
+    bottom: 0;
+    font-size: 1em;
+    width: 100%;
+    height: 50%;
+    transform: translateX(-100%);
+}
+.grid-realisations .top{
+    width: 100%;
+    height: 50%;
+    right: 0;
+    top: 0;
+}
+.grid-realisations .right{
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+.grid-realisations .bottom{
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+}
+.grid-realisations .left{
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+/*========== Effet hover sur vignette realisations ==========*/
+.grid-realisations:hover {
+    border-color: #fff;
+}
+.grid-realisations:hover .top {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.grid-realisations:hover .bottom {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+.grid-realisations:hover figcaption {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+.grid-realisations:hover .left {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+.grid-realisations:hover .right {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+.grid-realisations:hover img{
+    transform: scale(1);
+}
+
+/*==========================================================================
+    CHECKBOX
+==========================================================================*/
+/* Smartphone */
+@media only screen and (max-device-width: 640px) {
+    .category .ckbx-category > label {
+        width: 70%;
+    }
+}
+
+/* Desktop */
+.ckbx-all, .ckbx-category, .ckbx-tag li{
+    margin: 5px 3px;
+}
+.category {
+    margin-top: 15px;
+}
+    .ckbx-category > label {
+        /*min-width: 150px;*/
+        width: 100%;
+    }
+
+.ckbx-tag {
+    text-align: left;
+}
+    .ckbx-tag li {
+        display: inline-block;
+    }

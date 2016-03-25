@@ -1,0 +1,144 @@
+/*==========================================================================
+    CORE
+==========================================================================*/
+.main{
+    display: block;
+}
+.title_N1, .lettrine:first-letter{
+    color: rgb(0, 109, 117);
+}
+
+
+/*==========================================================================
+    MAIN LEFT
+==========================================================================*/
+
+/*==========================================================================
+    PROJECT
+==========================================================================*/
+.header-project h3 i {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+/* Smartphone */
+@media only screen and (max-device-width: 640px) {
+    .content .btn-pagination-project {
+        margin-left: 5px;
+    }
+        .content .btn-pagination-project > a {
+            margin-right: 15px;
+        }
+}
+/* Tablette */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+
+}
+/* Desktop */
+.header-project h2{
+    max-width: 80%;
+}
+.header-project h3{
+    margin: 5px 0;
+}
+.project a:hover{
+    color: rgb(0, 109, 117);
+    text-decoration: underline;
+}
+
+.description-project {
+    margin: 30px 0;
+}
+
+.tools li{
+    display: inline-block;
+}
+.circle{
+    background: rgb(0, 109, 117);
+    border-radius:50%;
+    width:7px;
+    height:7px;
+    display: inline-block;
+}
+.tools li:nth-child(even) {
+    margin: 0 3px;
+}
+.images-project > div {
+    margin-bottom: 35px;
+}
+/*  */
+@media only screen and (max-device-width: 640px) {
+
+}
+/* Tablette &Smartphone */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+    .images-project img {
+    }
+}
+/* Desktop */
+.images-project img {
+    border-color: #292d31;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    min-width: 200px;
+}
+.maxHeight800px {
+    max-height: 800px;
+    width: auto;
+}
+.images-project img:hover, .images-project img:active, .have-border {
+    border-color: rgb(0, 109, 117);
+    transition: all ease;
+}
+.btn-pagination-project {
+    margin-bottom: 15px;
+}
+    .btn-pagination-project > a {
+        margin-right: 10px;
+    }
+        .btn-pagination-project i {
+            font-size: 2em;
+            /*margin-left: 15px;*/
+        }
+        .btn-pagination-project i:hover{
+            color: rgb(0, 109, 117);
+        }
+
+/*
+.loading{
+    position:fixed;
+    top:10px;
+    right:0px;
+    padding:15px 40px 15px 60px;
+    -moz-box-shadow:0px 0px 2px #000;
+    -webkit-box-shadow:0px 0px 2px #000;
+    box-shadow:0px 0px 2px #000;
+    opacity:0.6;
+}
+*/
+.tool-focus {
+    color: rgb(0, 109, 117);
+    text-shadow: 0 0 1px #005a60;
+}
+
+.year {
+    margin-top: 25px;
+}
+
+/*==========================================================================
+    IMG
+==========================================================================*/
+/* Smartphone */
+@media only screen and (max-device-width: 640px) {
+
+}
+/* Tablette */
+@media only screen and (max-device-width: 801px), (max-device-width: 1280px) and (max-device-height: 801px) {
+
+}
+/* Desktop */
